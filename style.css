@@ -1,0 +1,37 @@
+.space {
+    transition: 0.3s;
+    flex-grow:1;
+    border: 1px solid gray;
+}
+
+#grid{
+    display:flex;
+    flex-direction:column;
+    margin: 20px;
+    width:80vh;
+    height:80vh;
+
+    border: 3px solid black;
+
+}
+
+#grid div {
+    display:flex;
+    flex-grow:1;
+
+}
+
+.space-hovered{
+    background-color: black;
+}
+
+button{
+    background-color:white;
+    margin: 5px;
+    border: 1px black solid;
+    padding: 4px;
+}
+
+.active-mode{
+    background-color: purple;
+}
