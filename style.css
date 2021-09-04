@@ -13,6 +13,7 @@
     flex-direction: column;
     margin-top:auto;
     margin-bottom:auto;
+    width: 200px;
 }
 
 #grid{
@@ -48,4 +49,28 @@ button{
 .active-mode{
     background-color: lightgray;
     color: black;
+}
+
+#dimension-number{
+    text-align: center;
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+@keyframes shake {
+    0% { transform:  rotate(0deg); }
+    10% { transform: rotate(-4deg); }
+    20% { transform: rotate(4deg); }
+    30% { transform: rotate(0deg); }
+    40% { transform: rotate(4deg); }
+    50% { transform: rotate(-4deg); }
+    60% { transform: rotate(0deg); }
+    70% { transform: rotate(-4deg); }
+    80% { transform: rotate(4deg); }
+    90% { transform: rotate(0deg); }
+    100% { transform: rotate(-4deg); }
+  }
+
+.grid-shake {
+    animation: shake 0.25s;
 }

@@ -11,7 +11,7 @@ const BLACK = document.getElementById('black');
 const DIM_SLIDER = document.getElementById('dimension-slider');
 DIM_SLIDER.value = dimension;
 
-document.getElementById('reset').addEventListener('click', resetGrid)
+document.getElementById('reset').addEventListener('click', clearBoard)
 RAINBOW.addEventListener('click', event => {
     changeMode('rainbow');
     RAINBOW.classList.add('active-mode')
@@ -108,8 +108,37 @@ function randomColor() {
     return `rgb(${r},${g},${b})`
 }
 
+function clearBoard() {
+    GRID.classList.add('grid-shake')
+    document.querySelectorAll('.space').forEach(item => {
+        item.style.backgroundColor = 'white';
+    })
+    setTimeout(() => { GRID.classList.remove('grid-shake') }, 1000);
+}
+
+document.getElementById("dimension-number").textContent = DIM_SLIDER.value;
+
 DIM_SLIDER.oninput = function () {
+    document.getElementById("dimension-number").textContent = DIM_SLIDER.value;
+}
+
+DIM_SLIDER.onchange = function () {
     resetGrid(DIM_SLIDER.value);
+
+}
+
+window.onresize = function () {
+    console.log("we did a resize!")
+    if (window.innerWidth <= window.innerHeight) {
+        console.log(`${window.innerWidth} <= ${window.innerHeight}`)
+        GRID.style.width = '80vw';
+        GRID.style.height = '80vw';
+    }
+
+    else {
+        GRID.style.innerWidth = '80vh';
+        GRID.style.innerHeight = '80vh';
+    }
 }
 
 generateGrid(dimension);
