@@ -4,14 +4,25 @@
     border: 1px solid gray;
 }
 
+#main-wrapper{
+    display:flex;
+}
+
+#button-holder{
+    display:flex;
+    flex-direction: column;
+    margin-top:auto;
+    margin-bottom:auto;
+}
+
 #grid{
     display:flex;
     flex-direction:column;
     margin: 20px;
     width:80vh;
     height:80vh;
-
-    border: 3px solid black;
+    border: 30px solid red;
+    border-radius: 10px;
 
 }
 
@@ -30,8 +41,11 @@ button{
     margin: 5px;
     border: 1px black solid;
     padding: 4px;
+    border-radius:  3px;
+    font-size: 20px;
 }
 
 .active-mode{
-    background-color: purple;
+    background-color: lightgray;
+    color: black;
 }
